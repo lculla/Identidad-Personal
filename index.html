@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creative Collections — Portfolio</title>
+<style>
+:root{--blue:#79c9ed;--grey:#858b8f;--line:#d3d6d8;}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:"Arial","Helvetica Neue",sans-serif;color:#777;}
+body{background:#f1f1f1;cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2742%27%20height%3D%2756%27%20viewBox%3D%270%200%2042%2056%27%3E%0A%3Cpath%20d%3D%27M14%2052%20L5%2038%20L2%2032%20L7%2028%20L12%2034%20L10%207%20Q10%202%2015%202%20Q20%202%2020%207%20L20%2023%20L21%205%20Q21%200%2026%201%20Q31%201%2031%206%20L30%2024%20L32%2010%20Q33%205%2037%207%20Q41%208%2040%2013%20L37%2031%20L39%2026%20Q42%2022%2045%2026%20L41%2042%20L33%2053%20Z%27%20fill%3D%27white%27%20stroke%3D%27black%27%20stroke-width%3D%273%27%20stroke-linejoin%3D%27miter%27%2F%3E%0A%3Cpath%20d%3D%27M12%2037%20L18%2033%20L24%2037%20L18%2042%20Z%20M23%2030%20L29%2026%20L35%2030%20L29%2035%20Z%20M17%2045%20L23%2041%20L29%2045%20L23%2050%20Z%27%20fill%3D%27%2378c9ee%27%2F%3E%0A%3Cpath%20d%3D%27M20%2024%20L26%2020%20L32%2024%20L26%2028%20Z%20M29%2038%20L35%2034%20L40%2038%20L34%2042%20Z%27%20fill%3D%27%23b9e7f8%27%2F%3E%0A%3C%2Fsvg%3E") 7 2, auto;}
+button,a{cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2742%27%20height%3D%2756%27%20viewBox%3D%270%200%2042%2056%27%3E%0A%3Cpath%20d%3D%27M14%2052%20L5%2038%20L2%2032%20L7%2028%20L12%2034%20L10%207%20Q10%202%2015%202%20Q20%202%2020%207%20L20%2023%20L21%205%20Q21%200%2026%201%20Q31%201%2031%206%20L30%2024%20L32%2010%20Q33%205%2037%207%20Q41%208%2040%2013%20L37%2031%20L39%2026%20Q42%2022%2045%2026%20L41%2042%20L33%2053%20Z%27%20fill%3D%27white%27%20stroke%3D%27black%27%20stroke-width%3D%273%27%20stroke-linejoin%3D%27miter%27%2F%3E%0A%3Cpath%20d%3D%27M12%2037%20L18%2033%20L24%2037%20L18%2042%20Z%20M23%2030%20L29%2026%20L35%2030%20L29%2035%20Z%20M17%2045%20L23%2041%20L29%2045%20L23%2050%20Z%27%20fill%3D%27%2378c9ee%27%2F%3E%0A%3Cpath%20d%3D%27M20%2024%20L26%2020%20L32%2024%20L26%2028%20Z%20M29%2038%20L35%2034%20L40%2038%20L34%2042%20Z%27%20fill%3D%27%23b9e7f8%27%2F%3E%0A%3C%2Fsvg%3E") 7 2, auto;font:inherit}
+.screen{min-height:100vh;display:none}
+.screen.active{display:flex;animation:fade .38s ease both}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+/* Wii startup health-and-safety screen */
+#intro{align-items:center;justify-content:flex-start;flex-direction:column;background:#000;color:#f4f4f4;text-align:center;padding:clamp(30px,7vh,66px) 20px 24px}
+.intro-logo{display:none}
+.intro-sub{display:none}
+#intro:before{content:"⚠ WARNING-HEALTH AND SAFETY";font-size:clamp(16px,2.2vw,22px);font-weight:700;letter-spacing:.015em;margin-bottom:32px;color:#f5f5f5}
+#intro .start-hint{display:none}
+#intro:after{content:"BEFORE PLAYING, READ YOUR OPERATIONS\A MANUAL FOR IMPORTANT INFORMATION\A ABOUT YOUR HEALTH AND SAFETY.\A\A Also online at\A www.nintendo.com/healthsafety/";white-space:pre-line;line-height:1.8;font-size:clamp(13px,1.8vw,16px);font-weight:600;color:#eee;max-width:560px}
+.intro-button{position:absolute;top:76%;left:50%;transform:translate(-50%,-50%);margin:0;border:0;background:transparent;color:#eee;font-size:18px;font-weight:600;letter-spacing:.03em;padding:10px 18px}
+.intro-button:hover{color:#9bdcf7}
+/* Wii Menu background and channel grid */
+#menu{position:relative;min-height:100vh;flex-direction:column;padding:clamp(22px,5vh,52px) clamp(18px,5vw,70px) 154px;overflow:hidden;background:repeating-linear-gradient(180deg,#f8f8f8 0px,#f8f8f8 2px,#f2f2f2 3px,#f7f7f7 4px)}
+.topbar{position:absolute;top:16px;left:22px;right:22px;display:flex;justify-content:space-between;align-items:center;pointer-events:none}
+.brand{font-size:11px;letter-spacing:.12em;color:#a3a6a8;font-weight:600}
+.clock{position:absolute;left:50%;bottom:42px;transform:translateX(-50%);font-size:25px;color:#85898b;font-variant-numeric:tabular-nums;text-align:center;white-space:nowrap}
+.menu-heading{text-align:center;margin:0 0 17px;display:none}
+.menu-heading h1{margin:0;font-size:22px;font-weight:400;color:#8a8d8f}
+.menu-heading p{margin:6px 0 0;color:#a5a8aa;font-size:12px}
+.channels-wrap{width:min(100%,1190px);margin:0 auto;}
+.channels{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(3,minmax(118px,1fr));gap:12px 14px;}
+.channel{position:relative;display:flex;flex-direction:column;align-items:stretch;justify-content:stretch;min-width:0;height:clamp(112px,16vh,150px);padding:4px;border:2px solid #c9cbcd;border-radius:17px;background:linear-gradient(180deg,#fff 0%,#fff 55%,#f0f1f1 100%);box-shadow:0 2px 2px #00000012,inset 0 2px 3px #ffffff;overflow:hidden;color:#888;text-align:center;transition:border-color .16s,box-shadow .16s,filter .16s}
+.channel:hover,.channel:focus-visible{border-color:#83cfee;box-shadow:0 0 0 2px #7fd0f466,0 0 12px #73c9ef77,inset 0 2px 4px #fff;outline:none;filter:brightness(1.025)}
+.thumb{height:100%;min-height:0;flex:1;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;border-radius:11px;background:linear-gradient(135deg,var(--tile,#e7f1f5),#fff 82%)}
+.thumb:before{content:"";position:absolute;width:38px;height:38px;border-radius:50%;border:2px solid #ffffffb0;box-shadow:0 0 0 7px #ffffff25}
+.thumb:after{content:"";position:absolute;width:14px;height:14px;border-radius:50%;background:#ffffffb5}
+.channel-title{display:block;position:absolute;left:8px;right:8px;bottom:7px;padding:2px 4px;background:#ffffffc9;border-radius:4px;font-size:11px;font-weight:600;color:#6f777b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-shadow:0 1px #fff}
+.channel-number{display:none}
+.menu-bottom{position:absolute;left:0;right:0;bottom:0;height:132px;margin:0;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(22px,5vw,70px);border-top:3px solid #80d0f1;background:linear-gradient(180deg,#d9dcde 0%,#c7cbcd 24%,#e6e8e9 100%);box-shadow:0 -3px 9px #7c858a30}
+.menu-bottom:before{content:"";position:absolute;left:-3%;right:-3%;top:-29px;height:58px;border-top:3px solid #79cfee;border-radius:50% 50% 0 0 / 65% 65% 0 0;background:linear-gradient(180deg,#e8eaeb 0%,#d4d7d9 100%);z-index:0}
+.wii-button,.hint{position:relative;z-index:1}
+.wii-button{width:100px;height:100px;display:flex;align-items:center;justify-content:center;gap:0;margin:0;border:3px solid #76c9ec;border-radius:50%;background:radial-gradient(circle at 35% 25%,#fff,#d9dddf 72%);color:#92989b;font-size:20px;font-weight:400;box-shadow:0 0 0 7px #ffffff50,inset 0 2px 6px #fff;transition:box-shadow .18s,border-color .18s}
+.wii-button:hover{border-color:#39b9ed;box-shadow:0 0 0 8px #7bd0f44d,0 0 14px #72c9ed88,inset 0 2px 6px #fff}
+.wii-mark{display:none}
+.hint{font-size:12px;color:#8d9295;align-self:flex-end;margin-bottom:16px}
+/* Project channel / personal system screens */
+#detail,#profile{align-items:center;justify-content:center;padding:28px 18px;background:radial-gradient(ellipse at 50% 20%,#fff,#eff1f2)}
+.detail-card,.profile-card{width:min(100%,900px);border:1px solid #d5d9db;border-radius:12px;background:linear-gradient(#fff,#f8f9f9);box-shadow:0 4px 18px #7c8b921c;padding:clamp(20px,4vw,42px)}
+.detail-top{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:24px}
+.eyebrow{color:#9ba3a7;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.back{border:1px solid #cdd2d5;background:linear-gradient(#fff,#edf0f1);border-radius:24px;padding:9px 18px;color:#81898d;box-shadow:0 1px 2px #00000010}
+.back:hover{border-color:#81cbed;box-shadow:0 0 0 2px #83d2f255}
+.detail-layout{display:grid;grid-template-columns:minmax(160px,.65fr) 1.5fr;gap:30px;align-items:start}
+.detail-art{min-height:210px;border:1px solid #d8dfe2;border-radius:9px;background:linear-gradient(135deg,var(--tile,#e5f0f4),#fff);display:grid;place-items:center;color:#ffffff;font-size:32px;font-weight:300;text-shadow:0 1px 3px #8ca5b055}
+h2{font-weight:300;font-size:clamp(1.7rem,4vw,2.5rem);margin:8px 0 14px;color:#707a7f}
+.description{line-height:1.7;color:#858f94;white-space:pre-wrap;font-size:14px}
+.project-content{border-top:1px solid #e1e5e7;margin-top:25px;padding-top:18px;color:#a0a7aa;font-size:12px}
+.profile-card{max-width:720px;text-align:center}
+.mii{width:88px;height:88px;border-radius:50%;background:linear-gradient(145deg,#e9f8fd,#b8e1f1);margin:0 auto 20px;display:grid;place-items:center;color:#6ca9c5;font-size:32px;border:1px solid #c7e4f0}
+.profile-text{max-width:520px;margin:0 auto;line-height:1.7;color:#858f94;white-space:pre-wrap}
+.profile-links{margin-top:24px;color:#64add0;font-size:13px}
+/* Content editor remains available, but visually secondary to the console interface */
+.editor-toggle{position:fixed;right:16px;bottom:14px;z-index:10;border:1px solid #b9d7e5;border-radius:22px;padding:8px 13px;background:linear-gradient(#fff,#edf7fb);color:#6c9db5;box-shadow:0 2px 6px #6e91a018;font-size:12px}
+.editor{display:none;position:fixed;z-index:20;right:16px;bottom:58px;width:min(360px,calc(100vw - 32px));max-height:72vh;overflow:auto;padding:18px;border:1px solid #d5e1e6;border-radius:8px;background:#fff;box-shadow:0 8px 28px #526d7a25}
+.editor.open{display:block}
+.editor h3{margin:0 0 12px;font-size:1rem;font-weight:400}
+.editor label{display:block;font-size:12px;color:#77868d;margin:12px 0 5px}
+.editor input,.editor textarea{width:100%;border:1px solid #dbe4e8;border-radius:5px;padding:8px;color:#4b5960;background:#fbfcfd}
+.editor textarea{min-height:65px;resize:vertical}
+.editor-actions{display:flex;gap:8px;margin-top:14px}
+.editor-actions button{border:1px solid #d3e5ed;border-radius:18px;padding:8px 12px;background:#f2f9fc;color:#578eaa}
+.editor small{display:block;color:#9aa5aa;line-height:1.45;margin-top:10px}
+@media(max-width:760px){
+ #menu{padding:48px 14px 140px}
+ .channels{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,minmax(100px,1fr));gap:10px}
+ .channel{height:clamp(100px,16vh,130px)}
+ .menu-bottom{height:112px}
+ .wii-button{width:78px;height:78px}
+}
+@media(max-width:520px){
+ .channels{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,minmax(90px,1fr))}
+ .channel{height:100px}
+ .detail-layout{grid-template-columns:1fr}
+ .detail-art{min-height:140px}
+ #intro:after{font-size:12px}
+}
+
+/* Precise Wii reference adjustments */
+body, button, a { cursor: url("data:image/png;base64,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") 4 2, auto; }
+body.cursor-pressed, body.cursor-pressed button, body.cursor-pressed a {
+  cursor: url("data:image/png;base64,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") 4 2, auto;
+}
+#intro {
+  position:relative; min-height:100vh; padding:0; display:none;
+  align-items:center; flex-direction:column; justify-content:flex-start;
+  background:#000; color:#f4f4f4; text-align:center;
+}
+#intro.active { display:flex; }
+.safety-title {
+  margin-top:clamp(40px, 11.5vh, 44px);
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:clamp(16px, 3.3vw, 21px); line-height:1.2;
+  font-weight:700; letter-spacing:0; color:#f3f3f3;
+}
+.safety-copy {
+  margin-top:clamp(24px, 8.5vh, 30px);
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:clamp(13px, 2.5vw, 16px); line-height:1.65;
+  font-weight:700; color:#ededed;
+}
+.safety-online {
+  margin-top:clamp(22px, 7vh, 27px);
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:14px; line-height:1.2; font-weight:600; color:#e9e9e9;
+}
+.safety-url {
+  margin-top:7px; font-family:Arial,Helvetica,sans-serif;
+  font-size:16px; font-weight:700; color:#83a9e6;
+}
+.intro-button {
+  position:static; transform:none; margin-top:clamp(20px, 6vh, 26px);
+  padding:0; border:0; border-radius:0; background:transparent;
+  color:#f3f3f3; font-family:Arial,Helvetica,sans-serif;
+  font-size:18px; font-weight:600; letter-spacing:.01em;
+}
+.intro-button:hover { background:transparent; color:#fff; }
+.a-button {
+  display:inline-flex; width:20px; height:20px; align-items:center; justify-content:center;
+  border:2px solid #f1f1f1; border-radius:50%; font-size:13px; line-height:1;
+  vertical-align:middle; margin:0 3px; font-weight:700;
+}
+#menu { padding-left:clamp(20px, 8.3vw, 118px); padding-right:clamp(20px, 8.3vw, 118px); }
+.channels {
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  grid-template-rows:repeat(3, minmax(110px, 1fr));
+  gap:12px 13px;
+}
+.channel {
+  height:clamp(108px, 21vh, 152px);
+  min-height:0; padding:3px; border-radius:16px;
+}
+.thumb { border-radius:12px; }
+.channel-title { font-size:11px; bottom:6px; }
+.menu-bottom { height:132px; }
+@media(max-width:760px) {
+  #menu { padding-left:16px; padding-right:16px; }
+  .channels { grid-template-columns:repeat(3,minmax(0,1fr)); grid-template-rows:repeat(3,minmax(90px,1fr)); }
+}
+@media(max-width:520px) {
+  .channels { grid-template-columns:repeat(2,minmax(0,1fr)); grid-template-rows:repeat(3,minmax(85px,1fr)); }
+  .safety-title { margin-top:42px; }
+  .safety-copy { margin-top:28px; }
+}
+\n
+/* Layout matched to the user's Wii Menu reference image */
+#menu {
+  padding: 0;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    repeating-linear-gradient(0deg, rgba(150,150,150,.16) 0px, rgba(150,150,150,.16) 1px, transparent 1px, transparent 5px),
+    linear-gradient(90deg, #f4f4f4 0%, #fff 15%, #fff 85%, #f2f2f2 100%);
+}
+#menu .topbar { display:none; }
+#menu .menu-heading { display:none; }
+#menu .channels-wrap {
+  position: absolute;
+  top: 7.7%;
+  left: 8.5%;
+  width: 83%;
+  height: 63%;
+  margin: 0;
+  overflow: visible;
+}
+#menu .channels {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  gap: 8px 12px;
+}
+#menu .channel {
+  height: auto;
+  min-height: 0;
+  padding: 3px;
+  border: 2px solid #aeb0b0;
+  border-radius: 17px;
+  background: linear-gradient(180deg, #fff 0%, #fff 72%, #f7f7f7 100%);
+  box-shadow: 0 1px 2px #00000018, inset 0 1px 2px #fff;
+  overflow: hidden;
+}
+#menu .channel:hover, #menu .channel:focus-visible {
+  border-color: #83cfee;
+  box-shadow: 0 0 0 2px #8bd7f766, 0 0 9px #7bc9e977, inset 0 1px 2px #fff;
+}
+#menu .thumb {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: #fff !important;
+}
+#menu .thumb:before, #menu .thumb:after { display:none; }
+#menu .channel-title { display:none; }
+#menu .empty-channel { pointer-events:none; }
+#menu .page-arrow {
+  position:absolute;
+  right:-4.5%;
+  top:39%;
+  width:34px;
+  height:58px;
+  border:0;
+  padding:0;
+  background:transparent;
+  color:#68cbed;
+  font-family:Arial,sans-serif;
+  font-size:64px;
+  line-height:48px;
+  font-weight:300;
+  text-shadow:1px 1px 0 #257eaa, -1px 0 #fff;
+}
+#menu .menu-bottom {
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:27.5%;
+  min-height:130px;
+  margin:0;
+  padding:0;
+  border:0;
+  background:linear-gradient(180deg,#dfe1e2 0%,#d2d5d7 44%,#e6e7e8 100%);
+  box-shadow:none;
+}
+#menu .menu-bottom:before {
+  content:"";
+  position:absolute;
+  left:-4%;
+  right:-4%;
+  top:-34px;
+  height:72px;
+  border-top:3px solid #83d5f4;
+  border-radius:50% 50% 0 0 / 65% 65% 0 0;
+  background:linear-gradient(180deg,#e4e6e7 0%,#d2d5d7 90%);
+}
+#menu .wii-button, #menu .mail-button {
+  position:absolute;
+  z-index:2;
+  top:18%;
+  width:clamp(64px,12vw,94px);
+  height:clamp(64px,12vw,94px);
+  border:2px solid #8ccfe9;
+  border-radius:50%;
+  background:radial-gradient(circle at 42% 35%,#f8f9f9 0%,#dfe2e3 72%,#cbd0d2 100%);
+  box-shadow:0 0 0 7px #ffffff50, 0 2px 4px #6d7d8422, inset 0 1px 4px #fff;
+}
+#menu .wii-button { left:6%; }
+#menu .mail-button { right:6%; }
+#menu .wii-button:after { content:""; }
+#menu .mail-button:after { content:""; }
+#menu .bottom-clock {
+  position:absolute;
+  z-index:2;
+  left:50%;
+  top:22%;
+  transform:translateX(-50%);
+  color:#858a8d;
+  font-size:clamp(22px,4vw,34px);
+  line-height:1.25;
+  text-align:center;
+  font-weight:300;
+  white-space:nowrap;
+}
+#menu .hint { display:none; }
+@media(max-width:700px) {
+  #menu .channels-wrap { left:5%; width:86%; top:7%; height:65%; }
+  #menu .channels { gap:7px; }
+  #menu .channel { border-radius:13px; }
+  #menu .menu-bottom { height:25%; }
+  #menu .wii-button { left:5%; }
+  #menu .mail-button { right:5%; }
+}
+
+
+/* Latest reference: 3 columns x 2 rows and Wii lower control panel */
+#menu {
+  position:relative; min-height:100vh; padding:0; overflow:hidden;
+  background:repeating-linear-gradient(0deg,#f8f8f8 0px,#f8f8f8 2px,#e9e9e9 2px,#e9e9e9 4px);
+}
+#menu .topbar,#menu .menu-heading {display:none}
+#menu .channels-wrap {
+  position:absolute; left:5.8%; top:8.5%; width:90%; height:57%;
+  margin:0; overflow:visible;
+}
+#menu .channels {
+  width:100%; height:100%;
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr));
+  grid-template-rows:repeat(2,minmax(0,1fr));
+  gap:18px 17px;
+}
+#menu .channel {
+  height:auto; min-height:0; padding:3px;
+  border:4px solid #bfc1c2; border-radius:28px;
+  background:linear-gradient(180deg,#f7f7f7,#fff 30%,#f6f6f6);
+  box-shadow:inset 0 1px 5px #fff,0 1px 2px #7773;
+  overflow:hidden;
+}
+#menu .channel:hover,#menu .channel:focus-visible {
+  border-color:#79d4f7; box-shadow:0 0 0 2px #76d5fa55,0 0 12px #66c8ee77,inset 0 1px 5px #fff;
+}
+#menu .thumb {
+  height:100%; width:100%; border-radius:20px;
+  background:repeating-linear-gradient(0deg,#f5f5f5 0px,#f5f5f5 3px,#ededed 3px,#ededed 6px) !important;
+}
+#menu .thumb:before,#menu .thumb:after {display:none}
+#menu .channel-title {display:none}
+#menu .page-arrow {
+  position:absolute; right:-2.4%; top:43%;
+  width:44px;height:74px;padding:0;border:0;background:transparent;
+  color:#70d3f4;font:300 83px/58px Arial,sans-serif;
+  -webkit-text-stroke:1px #257da7;
+  text-shadow:1px 2px 1px #fff;
+}
+#menu .menu-bottom {
+  position:absolute;left:0;right:0;bottom:0;height:31%;
+  min-height:145px;margin:0;padding:0;border:0;
+  background:linear-gradient(180deg,#d6d9da 0%,#c8cbcd 35%,#e0e2e3 100%);
+  box-shadow:inset 0 7px 10px #8d969a38;
+}
+#menu .menu-bottom:before {
+  content:"";position:absolute;left:-5%;right:-5%;top:-46px;height:92px;
+  border-top:4px solid #65cbed;
+  border-radius:48% 48% 0 0 / 72% 72% 0 0;
+  background:linear-gradient(180deg,#e9ebec 0%,#d2d5d7 86%);
+}
+#menu .wii-button,#menu .mail-button {
+  position:absolute;z-index:2;top:17%;
+  width:clamp(74px,10vw,112px);height:clamp(74px,10vw,112px);
+  border:3px solid #69c9ec;border-radius:50%;
+  background:radial-gradient(circle at 37% 30%,#f7f8f8 0%,#dce0e1 72%,#cbd0d2 100%);
+  box-shadow:0 0 0 8px #ffffff55,7px 7px 0 #9ca2a555,inset 0 2px 6px #fff;
+  color:#8a8e90;font-size:clamp(21px,3vw,32px);font-weight:400;
+}
+#menu .wii-button {left:5%}
+#menu .mail-button {right:5%}
+#menu .mail-button span {
+  display:block;width:52%;height:36%;margin:auto;position:relative;
+  background:#a8abad;border-radius:2px;
+}
+#menu .mail-button span:after {
+  content:"";position:absolute;left:0;right:0;top:-1px;margin:auto;
+  width:70%;height:70%;border-left:3px solid #e5e7e8;border-bottom:3px solid #e5e7e8;
+  transform:rotate(-45deg) translateY(-30%);
+}
+
+#menu .bottom-clock {
+  position:absolute;z-index:2;left:50%;top:5%;transform:translateX(-50%);
+  color:#85898b;font-size:clamp(27px,4.8vw,48px);
+  font-weight:300;line-height:1.65;text-align:center;white-space:nowrap;
+  font-family:Arial,Helvetica,sans-serif;
+}
+#menu .bottom-clock span {font-size:clamp(25px,4.2vw,42px);font-weight:600}
+#menu .hint {display:none}
+@media(max-width:700px) {
+  #menu .channels-wrap {left:4%;width:92%;top:8%;height:55%}
+  #menu .channels {gap:10px}
+  #menu .channel {border-radius:18px;border-width:3px}
+  #menu .thumb {border-radius:13px}
+  #menu .menu-bottom {height:29%}
+  #menu .sd-card {left:22%;transform:scale(.8);transform-origin:top left}
+}
+
+
+/* Annotation mode */
+.annotation-toggle {
+  position:fixed; right:16px; bottom:14px; z-index:40;
+  border:1px solid #8bcfe9; border-radius:22px; padding:9px 15px;
+  background:linear-gradient(#fff,#eaf7fc); color:#568da8;
+  box-shadow:0 2px 8px #6e91a022; font-size:12px;
+}
+.annotation-toggle.active { background:#70c9ec; color:#fff; border-color:#4db8e4; }
+.annotation-panel {
+  display:none; position:fixed; z-index:50; right:16px; bottom:58px;
+  width:min(390px,calc(100vw - 32px)); max-height:76vh; overflow:auto;
+  padding:17px; border:1px solid #c9dce5; border-radius:10px;
+  background:linear-gradient(#fff,#f8fcfe); box-shadow:0 10px 34px #425e6c35;
+}
+.annotation-panel.open { display:block; }
+.annotation-panel h3 { margin:0 0 6px; color:#65777f; font-size:16px; font-weight:400; }
+.annotation-help { margin:0 0 12px; color:#98a5aa; font-size:11px; line-height:1.45; }
+.annotation-target { padding:8px 10px; border-radius:6px; background:#eef8fc; color:#548aa4; font-size:12px; margin-bottom:10px; }
+.annotation-panel textarea {
+  display:block; width:100%; min-height:94px; resize:vertical; padding:10px;
+  border:1px solid #d5e3e9; border-radius:6px; outline:none;
+  color:#596970; background:#fff; font:13px/1.5 Arial,sans-serif;
+}
+.annotation-panel textarea:focus { border-color:#80cce9; box-shadow:0 0 0 2px #80cce933; }
+.annotation-actions { display:flex; flex-wrap:wrap; gap:7px; margin-top:10px; }
+.annotation-actions button {
+  border:1px solid #cfe2eb; border-radius:18px; padding:8px 11px;
+  color:#598da5; background:linear-gradient(#fff,#edf7fb); font-size:11px;
+}
+.annotation-list { margin-top:14px; border-top:1px solid #e5edf0; padding-top:10px; }
+.annotation-item { display:flex; gap:8px; align-items:flex-start; padding:7px 0; border-bottom:1px solid #edf1f3; }
+.annotation-item p { flex:1; margin:0; color:#78878d; font-size:11px; line-height:1.45; white-space:pre-wrap; }
+.annotation-item button { border:0; background:transparent; color:#b17d86; font-size:11px; }
+.annotation-pickable { outline:2px dashed #73c9ed !important; outline-offset:2px; }
+.annotation-selected { outline:3px solid #f34da0 !important; outline-offset:3px; }
+body.annotation-mode, body.annotation-mode * { cursor:crosshair !important; }
+body.annotation-mode button { cursor:crosshair !important; }
+
+
+/* Final reference corrections: compact footer and single-layer startup screen */
+#menu .menu-bottom {
+  height:25%;
+  min-height:0;
+}
+#menu .menu-bottom:before {
+  top:-46px;
+  height:92px;
+}
+#menu .wii-button,
+#menu .mail-button {
+  top:14%;
+  width:clamp(72px,9vw,104px);
+  height:clamp(72px,9vw,104px);
+}
+#menu .bottom-clock {
+  top:1%;
+  line-height:1.5;
+}
+#menu .sd-card { display:none !important; }
+
+/* The original startup copy was being rendered twice:
+   once by pseudo-elements and once by the actual HTML elements. */
+#intro {
+  position:relative;
+  min-height:100vh;
+  width:100%;
+  box-sizing:border-box;
+  padding:0;
+  display:none;
+  align-items:center;
+  justify-content:flex-start;
+  flex-direction:column;
+  overflow:hidden;
+  background:#000;
+  color:#f4f4f4;
+  text-align:center;
+}
+#intro.active { display:flex; }
+#intro:before,
+#intro:after { content:none !important; display:none !important; }
+
+#intro .safety-title {
+  position:absolute;
+  top:11.5%;
+  left:0;
+  right:0;
+  margin:0;
+  padding:0 12px;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:clamp(16px,3.1vw,21px);
+  line-height:1.2;
+  font-weight:700;
+  color:#f3f3f3;
+}
+#intro .safety-copy {
+  position:absolute;
+  top:30.5%;
+  left:0;
+  right:0;
+  margin:0;
+  padding:0 10px;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:clamp(13px,2.45vw,16px);
+  line-height:1.65;
+  font-weight:700;
+  color:#ededed;
+}
+#intro .safety-online {
+  position:absolute;
+  top:61%;
+  left:0;
+  right:0;
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:14px;
+  line-height:1.2;
+  font-weight:600;
+  color:#e9e9e9;
+}
+#intro .safety-url {
+  position:absolute;
+  top:68.5%;
+  left:0;
+  right:0;
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:clamp(14px,2.5vw,16px);
+  font-weight:700;
+  color:#83a9e6;
+}
+#intro .intro-button {
+  position:absolute;
+  top:80.5%;
+  left:50%;
+  transform:translateX(-50%);
+  margin:0;
+  padding:0 8px;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  color:#f3f3f3;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:18px;
+  line-height:1.3;
+  font-weight:600;
+  white-space:nowrap;
+}
+#intro .intro-button:hover { background:transparent; color:#fff; }
+#intro .a-button {
+  display:inline-flex;
+  width:20px;
+  height:20px;
+  align-items:center;
+  justify-content:center;
+  border:2px solid #f1f1f1;
+  border-radius:50%;
+  font-size:13px;
+  line-height:1;
+  vertical-align:middle;
+  margin:0 3px;
+  font-weight:700;
+}
+@media(max-height:420px) {
+  #intro .safety-title { top:9%; }
+  #intro .safety-copy { top:27%; }
+  #intro .safety-online { top:59%; }
+  #intro .safety-url { top:67%; }
+  #intro .intro-button { top:80%; }
+}
+@media(max-width:700px) {
+  #menu .menu-bottom { height:23%; min-height:118px; }
+  #menu .wii-button,#menu .mail-button {
+    top:17%;
+    width:clamp(64px,12vw,82px);
+    height:clamp(64px,12vw,82px);
+  }
+  #menu .bottom-clock { top:4%; }
+}
+
+
+/* Startup screen refinements */
+#intro .safety-title { font-size:clamp(19px,3.5vw,25px); }
+#intro .safety-copy { font-size:clamp(16px,2.8vw,19px); line-height:1.7; }
+#intro .safety-online { font-size:16px; }
+#intro .safety-url { font-size:clamp(17px,2.8vw,19px); }
+#intro .intro-button { font-size:20px; }
+#intro .a-button { width:22px; height:22px; font-size:14px; }
+.warning-triangle {
+  display:inline-flex;
+  position:relative;
+  width:24px;
+  height:22px;
+  margin-right:8px;
+  align-items:center;
+  justify-content:center;
+  vertical-align:-3px;
+  background:#ffd928;
+  clip-path:polygon(50% 0%, 100% 100%, 0% 100%);
+}
+.warning-triangle span {
+  position:relative;
+  top:3px;
+  color:#111;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:16px;
+  line-height:1;
+  font-weight:900;
+}
+.cv-card { max-width:900px; }
+.cv-content {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px 22px;
+  margin-top:18px;
+  padding:18px 22px;
+  border:1px solid #dce5e9;
+  border-radius:14px;
+  background:linear-gradient(#fff,#f7fbfd);
+  color:#737f84;
+  line-height:1.45;
+  text-align:left;
+}
+.cv-group h3 { margin:0 0 7px; color:#6f8d9c; font-size:13px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
+.cv-group p { margin:0 0 7px; font-size:13px; }
+.cv-group p:last-child { margin-bottom:0; }
+.cv-group strong { color:#63747c; }
+.cv-group ul { margin:0; padding-left:17px; font-size:13px; }
+.cv-group li { margin:0 0 3px; }
+.cv-content a { color:#659fbd; text-decoration:none; }
+.cv-contact { grid-column:1 / -1; }
+.cv-note { display:none; }
+.mii { overflow:hidden; padding:0; }
+.mii svg { display:block; width:100%; height:100%; }
+@media(max-width:650px) {
+  .cv-content { grid-template-columns:1fr; gap:13px; padding:16px; }
+  .cv-contact { grid-column:auto; }
+}
+
+/* Requested startup legibility and high-contrast pointer. */
+#intro .safety-title { font-size:clamp(22px,4vw,32px); }
+#intro .safety-copy { font-size:clamp(18px,3.2vw,23px); line-height:1.6; }
+#intro .safety-online { font-size:clamp(17px,2.7vw,20px); }
+#intro .safety-url { font-size:clamp(19px,3vw,22px); }
+#intro .intro-button { font-size:clamp(20px,3vw,24px); }
+#intro .a-button { width:26px; height:26px; font-size:16px; }
+#intro, #intro * {
+  cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='42' viewBox='0 0 36 42'%3E%3Cpath d='M4 2v31l8-8 7 15 7-3-7-14 13 1z' fill='%23ffe44d' stroke='%23111' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E") 4 2, crosshair !important;
+}
+
+</style>
+</head>
+<body>
+<section id="intro" class="screen active">
+  <div class="safety-title"><span class="warning-triangle" aria-hidden="true"><span>!</span></span> WARNING-HEALTH AND SAFETY</div>
+  <div class="safety-copy">
+    BEFORE PLAYING, READ YOUR OPERATIONS<br>
+    MANUAL FOR IMPORTANT INFORMATION<br>
+    ABOUT YOUR HEALTH AND SAFETY.
+  </div>
+  <div class="safety-online">Also online at</div>
+  <div class="safety-url">www.nintendo.com/healthsafety/</div>
+  <button class="intro-button" onclick="showScreen('menu')">Press <span class="a-button">A</span> to continue.</button>
+</section>
+
+<section id="menu" class="screen">
+  <header class="topbar">
+    <div class="brand">CREATIVE COLLECTIONS</div>
+    <div class="clock" id="clock">--:--</div>
+  </header>
+  <div class="menu-heading">
+    <h1>Mis proyectos</h1>
+    <p>Selecciona un canal para explorar</p>
+  </div>
+  <main class="channels-wrap">
+    <div class="channels" id="channels"></div>
+    <button class="page-arrow" id="page-arrow" aria-label="Siguiente página" onclick="nextChannelPage()">›</button>
+  </main>
+  <footer class="menu-bottom">
+    <button class="wii-button" onclick="openProfile()" aria-label="Abrir menú Wii">Wii</button>
+    <div class="bottom-clock" id="bottom-clock">19:52<br><span>Fri 25/04</span></div>
+    <button class="mail-button" onclick="openCV()" aria-label="Abrir currículum" title="Currículum"><span></span></button>
+  </footer>
+</section>
+
+<section id="detail" class="screen">
+  <article class="detail-card">
+    <div class="detail-top">
+      <span class="eyebrow" id="detail-number">COLLECTION 01</span>
+      <button class="back" onclick="showScreen('menu')">← Menú</button>
+    </div>
+    <div class="detail-layout">
+      <div class="detail-art" id="detail-art">01</div>
+      <div>
+        <div class="eyebrow">PROJECT CHANNEL</div>
+        <h2 id="detail-title">Nombre del proyecto</h2>
+        <p class="description" id="detail-description"></p>
+        <div class="project-content">Aquí podrás incorporar imágenes, mockups, proceso y textos del proyecto.</div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section id="profile" class="screen">
+  <article class="profile-card">
+    <div class="detail-top"><span class="eyebrow">Wii profile</span><button class="back" onclick="showScreen('menu')">← Menú</button></div>
+    <div class="mii" role="img" aria-label="Mii femenino de pelo negro y facciones sencillas">
+      <svg viewBox="0 0 100 100" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="50" fill="#dff3fa"/>
+        <path d="M23 50C18 26 31 13 50 13s33 13 28 39l-7 24H30z" fill="#17171b"/>
+        <ellipse cx="50" cy="55" rx="22" ry="29" fill="#f3cfb5"/>
+        <path d="M28 46c1-20 12-29 24-29 16 0 24 12 22 31-7-2-12-7-15-14-7 8-18 12-31 12z" fill="#17171b"/>
+        <path d="M38 56c2-2 5-2 7 0M56 56c2-2 5-2 7 0" fill="none" stroke="#342522" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M50 58l-2 7 4 1" fill="none" stroke="#d5a990" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M45 72c3 3 8 3 11 0" fill="none" stroke="#a85f61" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="35" cy="64" r="3" fill="#efaaa3" opacity=".55"/><circle cx="65" cy="64" r="3" fill="#efaaa3" opacity=".55"/>
+      </svg>
+    </div>
+    <div class="eyebrow">HOLA</div>
+    <h2 id="profile-name">Lucía Culla</h2>
+    <p class="profile-text" id="profile-description">Soy estudiante de Diseño Gráfico. Este espacio reúne una selección de proyectos, ideas y experimentaciones que forman parte de mi recorrido creativo.</p>
+    <div class="profile-links" id="profile-links">Barcelona · Graphic Design · lculla@elisava</div>
+  </article>
+</section>
+
+<section id="cv" class="screen">
+  <article class="profile-card cv-card">
+    <div class="detail-top">
+      <span class="eyebrow">CURRICULUM VITAE</span>
+      <button class="back" onclick="showScreen('menu')">← Menú</button>
+    </div>
+    <h2>Currículum</h2>
+    <div class="cv-content">
+      <section class="cv-group">
+        <h3>Formación</h3>
+        <p><strong>2024 — Actualidad</strong><br>Diseño e Innovación en Diseño Gráfico — Elisava, Facultad de Diseño e Ingeniería de Barcelona</p>
+        <p><strong>2022 — 2024</strong><br>Educación Secundaria Obligatoria y Bachillerato de Humanidades — Col·legi Mare de Déu dels Àngels</p>
+      </section>
+      <section class="cv-group">
+        <h3>Experiencia laboral</h3>
+        <p><strong>2024 — Actualidad</strong><br>Profesora de inglés en una academia</p>
+        <p><strong>Julio — agosto de 2026</strong><br>Asistente de recursos humanos en una empresa de logística</p>
+        <p><strong>2024 — 2026</strong><br>Camarera de festival y personal de bar</p>
+        <p><strong>2025 — 2026</strong><br>Anfitriona del Club Lounge en Hotel ARTS</p>
+      </section>
+      <section class="cv-group">
+        <h3>Idiomas</h3>
+        <ul>
+          <li>Inglés — avanzado (certificado C1)</li>
+          <li>Español — nativo</li>
+          <li>Catalán — nativo</li>
+          <li>Francés — intermedio (certificado B1)</li>
+        </ul>
+      </section>
+      <section class="cv-group">
+        <h3>Programas</h3>
+        <ul>
+          <li>InDesign — avanzado</li>
+          <li>Illustrator — avanzado</li>
+          <li>Photoshop — intermedio</li>
+          <li>After Effects — intermedio</li>
+          <li>Lightroom — intermedio</li>
+          <li>Premiere Pro — intermedio</li>
+          <li>AutoCAD — básico</li>
+          <li>Figma — básico</li>
+          <li>Procreate — avanzado</li>
+        </ul>
+      </section>
+      <section class="cv-group cv-contact">
+        <h3>Contacto</h3>
+        <p><a href="mailto:lculla@elisava.net">lculla@elisava.net</a></p>
+      </section>
+    </div>
+  </article>
+</section>
+
+
+<button class="annotation-toggle" id="annotation-toggle" type="button">✎ Anotar elementos</button>
+<aside class="annotation-panel" id="annotation-panel" aria-label="Anotaciones">
+  <h3>Anotaciones de Creative Collections</h3>
+  <p class="annotation-help">Activa el modo y selecciona cualquier elemento de la página. Escribe qué quieres cambiar y guarda la nota. Después podrás copiar todas las indicaciones para enviármelas en el chat.</p>
+  <div class="annotation-target" id="annotation-target">Ningún elemento seleccionado</div>
+  <textarea id="annotation-text" placeholder="Escribe aquí qué quieres cambiar de este elemento..."></textarea>
+  <div class="annotation-actions">
+    <button type="button" id="annotation-save">Guardar anotación</button>
+    <button type="button" id="annotation-copy">Copiar todas</button>
+    <button type="button" id="annotation-download">Descargar notas</button>
+    <button type="button" id="annotation-clear">Borrar todas</button>
+  </div>
+  <div class="annotation-list" id="annotation-list"></div>
+</aside>
+
+<button class="editor-toggle" onclick="toggleEditor()">✎ Editar</button>
+<aside class="editor" id="editor">
+  <h3>Editar contenido</h3>
+  <label for="edit-title">Título del portfolio</label>
+  <input id="edit-title" value="Creative Collections">
+  <label for="edit-project">Proyecto seleccionado</label>
+  <select id="edit-project" style="width:100%;padding:8px;border:1px solid #dbe4e8;border-radius:7px;background:white;color:#4b5960" onchange="loadEditorProject()"></select>
+  <label for="edit-project-title">Nombre del proyecto</label>
+  <input id="edit-project-title">
+  <label for="edit-project-description">Descripción breve</label>
+  <textarea id="edit-project-description"></textarea>
+  <label for="edit-profile">Presentación personal</label>
+  <textarea id="edit-profile">Soy estudiante de Diseño Gráfico. Este espacio reúne una selección de proyectos, ideas y experimentaciones que forman parte de mi recorrido creativo.</textarea>
+  <div class="editor-actions">
+    <button onclick="applyEdits()">Aplicar cambios</button>
+    <button onclick="downloadHTML()">Guardar HTML</button>
+  </div>
+  <small>Los cambios se aplican en esta vista. Pulsa “Guardar HTML” para descargar una copia con el contenido actualizado. Para cambiar colores y estructura, edita el CSS y el bloque PROJECTS del código.</small>
+</aside>
+
+<script>
+// EDITA AQUÍ LOS PROYECTOS: cambia títulos, descripciones y colores.
+// No son carátulas: son miniaturas sencillas para visualizar los proyectos en el menú.
+const projects = [
+  { title: "Mercat de les Flors", description: "Identidad visual, sistema gráfico y aplicaciones para un espacio cultural.", color: "#e7b6a8" },
+  { title: "1%", description: "Proyecto de fotografía y comunicación visual.", color: "#b8d9e8" },
+  { title: "A Alcoi — Ovidi Montllor", description: "Diseño de packaging y desarrollo de una propuesta visual.", color: "#d8c7e8" },
+  { title: "Pre-Fabricated", description: "Diseño editorial, tipografía y experimentación con la composición.", color: "#b9d9c9" },
+  { title: "20.000 especies de abejas", description: "Cartel cinematográfico a partir de una interpretación conceptual de la película.", color: "#f0d79c" },
+  { title: "Nuevo proyecto", description: "Añade aquí una breve descripción de tu sexto proyecto.", color: "#c7d0e8" }
+];
+let currentProject = 0;
+let currentChannelPage = 0;
+
+function showScreen(id) {
+  document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+}
+function renderChannels() {
+  const container = document.getElementById("channels");
+  container.innerHTML = "";
+  const arrow = document.getElementById("page-arrow");
+
+  for (let slot = 0; slot < 6; slot++) {
+    const projectIndex = currentChannelPage === 0 ? slot : -1;
+
+    if (projectIndex >= 0 && projectIndex < projects.length) {
+      const p = projects[projectIndex];
+      const button = document.createElement("button");
+      button.className = "channel";
+      button.setAttribute("aria-label", p.title);
+      button.innerHTML = `<span class="thumb" style="--tile:${p.color}"></span><span class="channel-title">${escapeHTML(p.title)}</span>`;
+      button.addEventListener("click", () => openProject(projectIndex));
+      container.appendChild(button);
+    } else {
+      const empty = document.createElement("div");
+      empty.className = "channel empty-channel";
+      empty.setAttribute("aria-hidden", "true");
+      empty.innerHTML = `<span class="thumb"></span>`;
+      container.appendChild(empty);
+    }
+  }
+
+  if (arrow) {
+    arrow.textContent = currentChannelPage === 0 ? "›" : "‹";
+    arrow.setAttribute("aria-label", currentChannelPage === 0 ? "Siguiente página" : "Página anterior");
+    arrow.title = currentChannelPage === 0 ? "Siguiente página" : "Página anterior";
+  }
+}
+
+function nextChannelPage() {
+  currentChannelPage = currentChannelPage === 0 ? 1 : 0;
+  renderChannels();
+}
+function openProject(index) {
+  currentProject = index;
+  const p = projects[index];
+  document.getElementById("detail-number").textContent = `COLLECTION ${String(index+1).padStart(2,"0")}`;
+  document.getElementById("detail-title").textContent = p.title;
+  document.getElementById("detail-description").textContent = p.description;
+  document.getElementById("detail-art").textContent = String(index+1).padStart(2,"0");
+  document.getElementById("detail-art").style.setProperty("--tile", p.color);
+  showScreen("detail");
+  document.getElementById("edit-project").value = index;
+  loadEditorProject();
+}
+function openProfile() { showScreen("profile"); }
+function openCV() { showScreen("cv"); }
+function toggleEditor() {
+  document.getElementById("editor").classList.toggle("open");
+}
+function loadEditorProject() {
+  const i = Number(document.getElementById("edit-project").value || 0);
+  document.getElementById("edit-project-title").value = projects[i].title;
+  document.getElementById("edit-project-description").value = projects[i].description;
+}
+function applyEdits() {
+  const title = document.getElementById("edit-title").value.trim() || "Creative Collections";
+  document.querySelector(".brand").textContent = title.toUpperCase();
+  document.querySelector(".intro-logo").innerHTML = escapeHTML(title).replace(" ", "<br>");
+  const i = Number(document.getElementById("edit-project").value || 0);
+  projects[i].title = document.getElementById("edit-project-title").value;
+  projects[i].description = document.getElementById("edit-project-description").value;
+  document.getElementById("profile-description").textContent = document.getElementById("edit-profile").value;
+  renderChannels();
+  if (document.getElementById("detail").classList.contains("active")) openProject(i);
+}
+function downloadHTML() {
+  const clone = document.documentElement.cloneNode(true);
+  const script = clone.querySelector("script");
+  const stateScript = document.createElement("script");
+  const serialized = JSON.stringify(projects).replace(/</g, "\\u003c");
+  stateScript.textContent = `const projects = ${serialized};\n` + script.textContent.substring(script.textContent.indexOf("let currentProject"));
+  script.replaceWith(stateScript);
+  const blob = new Blob(["<!DOCTYPE html>\n" + clone.outerHTML], {type:"text/html"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = "creative-collections.html"; a.click();
+  URL.revokeObjectURL(url);
+}
+function escapeHTML(str) {
+  return String(str).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+function updateClock() {
+  const now = new Date();
+  const time = now.toLocaleTimeString("en-GB", {hour:"2-digit", minute:"2-digit"});
+  const date = now.toLocaleDateString("en-GB", {weekday:"short", day:"2-digit", month:"2-digit"});
+  const clockHTML = time + "<br><span>" + date + "</span>";
+  document.getElementById("clock").innerHTML = clockHTML;
+  const bottomClock = document.getElementById("bottom-clock");
+  if (bottomClock) bottomClock.innerHTML = clockHTML;
+}
+document.addEventListener("pointerdown", () => document.body.classList.add("cursor-pressed"));
+document.addEventListener("pointerup", () => document.body.classList.remove("cursor-pressed"));
+document.addEventListener("pointercancel", () => document.body.classList.remove("cursor-pressed"));
+document.addEventListener("keydown", e => {
+  if (e.key.toLowerCase() === "a" && document.getElementById("intro").classList.contains("active")) showScreen("menu");
+  if (e.key === "Escape") showScreen("menu");
+});
+const projectSelect = document.getElementById("edit-project");
+projects.forEach((p, i) => { const o = document.createElement("option"); o.value = i; o.textContent = `${i+1}. ${p.title}`; projectSelect.appendChild(o); });
+renderChannels(); loadEditorProject(); updateClock(); setInterval(updateClock, 30000);
+
+// Annotation workflow: notes are associated with the selected page element.
+const annotationToggle = document.getElementById("annotation-toggle");
+const annotationPanel = document.getElementById("annotation-panel");
+const annotationTarget = document.getElementById("annotation-target");
+const annotationText = document.getElementById("annotation-text");
+const annotationList = document.getElementById("annotation-list");
+let annotationMode = false;
+let selectedAnnotationElement = null;
+let selectedAnnotationLabel = "";
+let annotations = [];
+try { annotations = JSON.parse(localStorage.getItem("creativeCollectionsAnnotations") || "[]"); } catch(e) {}
+
+function describeElement(el) {
+  if (!el) return "Elemento";
+  if (el.id) return "#" + el.id;
+  const channel = el.closest(".channel");
+  if (channel) {
+    const idx = Array.from(channel.parentElement.children).indexOf(channel) + 1;
+    return "Canal " + idx;
+  }
+  const known = [
+    [".wii-button","Botón Wii"],[".mail-button","Botón de mensajes"],
+    [".sd-card","Tarjeta SD"],[".bottom-clock","Hora y fecha"],
+    [".page-arrow","Flecha de navegación"],[".menu-bottom","Barra inferior"],
+    [".channels-wrap","Área de canales"],["#intro","Pantalla inicial"],
+    ["#detail","Pantalla de proyecto"],["#profile","Perfil personal"],
+    [".detail-card","Ficha del proyecto"],[".profile-card","Ficha del perfil"]
+  ];
+  for (const [selector,label] of known) if (el.matches(selector) || el.closest(selector)) return label;
+  const heading = el.closest("h1,h2,h3");
+  if (heading) return heading.textContent.trim();
+  const label = el.getAttribute("aria-label") || el.title || el.textContent?.trim();
+  return (el.tagName.toLowerCase() + (label ? " — " + label.slice(0,55) : ""));
+}
+function setAnnotationMode(enabled) {
+  annotationMode = enabled;
+  document.body.classList.toggle("annotation-mode", enabled);
+  annotationToggle.classList.toggle("active", enabled);
+  annotationToggle.textContent = enabled ? "✓ Selecciona un elemento" : "✎ Anotar elementos";
+  if (enabled) {
+    document.querySelectorAll(".screen.active *").forEach(el => {
+      if (!el.closest("#annotation-panel") && !el.closest("#editor")) el.classList.add("annotation-pickable");
+    });
+  } else {
+    document.querySelectorAll(".annotation-pickable").forEach(el => el.classList.remove("annotation-pickable"));
+  }
+}
+function renderAnnotationList() {
+  annotationList.innerHTML = annotations.length ? "<strong style='font-size:11px;color:#87969c;font-weight:500'>Notas guardadas (" + annotations.length + ")</strong>" : "<small style='color:#a2adb1'>Todavía no hay anotaciones.</small>";
+  annotations.forEach((note,i) => {
+    const row = document.createElement("div");
+    row.className = "annotation-item";
+    const p = document.createElement("p");
+    p.textContent = note.element + ": " + note.text;
+    const del = document.createElement("button");
+    del.type = "button"; del.textContent = "Eliminar";
+    del.addEventListener("click", () => {
+      annotations.splice(i,1); persistAnnotations(); renderAnnotationList();
+    });
+    row.append(p,del); annotationList.appendChild(row);
+  });
+}
+function persistAnnotations() {
+  try { localStorage.setItem("creativeCollectionsAnnotations", JSON.stringify(annotations)); } catch(e) {}
+}
+annotationToggle.addEventListener("click", () => {
+  annotationPanel.classList.toggle("open");
+  setAnnotationMode(annotationPanel.classList.contains("open"));
+});
+document.addEventListener("click", event => {
+  if (!annotationMode) return;
+  if (event.target.closest("#annotation-panel") || event.target.closest("#annotation-toggle") || event.target.closest("#editor")) return;
+  const el = event.target.closest(".screen.active *");
+  if (!el) return;
+  event.preventDefault(); event.stopPropagation(); event.stopImmediatePropagation();
+  if (selectedAnnotationElement) selectedAnnotationElement.classList.remove("annotation-selected");
+  selectedAnnotationElement = el;
+  selectedAnnotationElement.classList.add("annotation-selected");
+  selectedAnnotationLabel = describeElement(el);
+  annotationTarget.textContent = "Elemento seleccionado: " + selectedAnnotationLabel;
+  annotationText.focus();
+}, true);
+document.getElementById("annotation-save").addEventListener("click", () => {
+  const text = annotationText.value.trim();
+  if (!text || !selectedAnnotationLabel) {
+    annotationTarget.textContent = "Selecciona un elemento y escribe una indicación antes de guardar.";
+    return;
+  }
+  annotations.push({element:selectedAnnotationLabel, text, created:new Date().toISOString()});
+  persistAnnotations(); renderAnnotationList();
+  annotationText.value = "";
+  annotationTarget.textContent = "Anotación guardada para: " + selectedAnnotationLabel;
+  if (selectedAnnotationElement) selectedAnnotationElement.classList.remove("annotation-selected");
+  selectedAnnotationElement = null; selectedAnnotationLabel = "";
+});
+function annotationsAsText() {
+  return "CAMBIOS SOLICITADOS PARA CREATIVE COLLECTIONS\n\n" +
+    annotations.map((n,i) => (i+1) + ". ELEMENTO: " + n.element + "\n   CAMBIO: " + n.text).join("\n\n") +
+    "\n\nAplica estos cambios sobre el HTML actual y conserva el resto del diseño.";
+}
+document.getElementById("annotation-copy").addEventListener("click", async () => {
+  if (!annotations.length) { annotationTarget.textContent = "No hay anotaciones para copiar."; return; }
+  const text = annotationsAsText();
+  try {
+    await navigator.clipboard.writeText(text);
+    annotationTarget.textContent = "Anotaciones copiadas. Ya puedes pegarlas en el chat.";
+  } catch(e) {
+    annotationText.value = text; annotationText.focus(); annotationText.select();
+    annotationTarget.textContent = "Selecciona y copia el texto del campo.";
+  }
+});
+document.getElementById("annotation-download").addEventListener("click", () => {
+  if (!annotations.length) { annotationTarget.textContent = "No hay anotaciones para descargar."; return; }
+  const blob = new Blob([annotationsAsText()], {type:"text/plain;charset=utf-8"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a"); a.href=url; a.download="creative-collections-anotaciones.txt"; a.click();
+  URL.revokeObjectURL(url);
+});
+document.getElementById("annotation-clear").addEventListener("click", () => {
+  if (!confirm("¿Borrar todas las anotaciones guardadas?")) return;
+  annotations = []; persistAnnotations(); renderAnnotationList();
+  annotationTarget.textContent = "Todas las anotaciones se han borrado.";
+});
+renderAnnotationList();
+
+</script>
+</body>
+</html>
